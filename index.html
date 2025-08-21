@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🚀 Amazon Tools Hub</title>
-    <meta name="description" content="Access all Amazon processing tools in one place - Excel File Splitter and Carton Label Processor">
+    <title>Amazon Tools Hub - Simple Modern</title>
+    <meta name="description" content="Professional Amazon processing tools suite by Simple Modern">
     <style>
         * {
             margin: 0;
@@ -13,17 +13,235 @@
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+            background: #000000;
             min-height: 100vh;
-            padding: 20px;
-            color: #333;
+            color: #ffffff;
+            line-height: 1.6;
         }
 
         .container {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
-            animation: slideUp 0.8s ease-out;
+            padding: 30px 20px 40px 20px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 35px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .company-name {
+            font-size: 2.5rem;
+            font-weight: 900;
+            letter-spacing: -1px;
+            text-transform: uppercase;
+            background: linear-gradient(135deg, #ffffff 0%, #cccccc 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 5px;
+            animation: fadeIn 1s ease-out;
+        }
+
+        .tagline {
+            font-size: 2.5rem;
+            font-weight: 900;
+            letter-spacing: -1px;
+            text-transform: uppercase;
+            background: linear-gradient(135deg, #ffffff 0%, #cccccc 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: fadeIn 1s ease-out 0.2s both;
+        }
+
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .tool-card {
+            background: #0a0a0a;
+            border: 1px solid #1a1a1a;
+            border-radius: 12px;
+            padding: 35px 30px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+            animation: slideUp 0.6s ease-out both;
+            cursor: pointer;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+
+        .tool-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #ffffff, transparent);
+            transform: translateX(-100%);
+            transition: transform 0.6s ease;
+        }
+
+        .tool-card:hover::before {
+            transform: translateX(100%);
+        }
+
+        .tool-card:hover {
+            background: #111111;
+            border-color: #333333;
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+        }
+
+        .tool-card:hover .tool-button {
+            background: #f0f0f0;
+            transform: translateX(5px);
+        }
+
+        .tool-number {
+            display: inline-block;
+            width: 32px;
+            height: 32px;
+            background: #1a1a1a;
+            border: 1px solid #2a2a2a;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 30px;
+            font-size: 0.9rem;
+            color: #666666;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .tool-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: #ffffff;
+            letter-spacing: -0.5px;
+        }
+
+        .tool-description {
+            font-size: 1rem;
+            color: #999999;
+            line-height: 1.7;
+            margin-bottom: 25px;
+            min-height: 50px;
+        }
+
+        .tool-button {
+            background: #ffffff;
+            color: #000000;
+            text-decoration: none;
+            padding: 12px 24px;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            display: inline-block;
+            transition: all 0.2s ease;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            pointer-events: none;
+        }
+
+        .tool-card:active {
+            transform: translateY(-3px);
+        }
+
+        .features-section {
+            background: #0a0a0a;
+            border: 1px solid #1a1a1a;
+            border-radius: 12px;
+            padding: 40px;
+            margin-bottom: 60px;
+            text-align: center;
+        }
+
+        .features-title {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 30px;
+            letter-spacing: -0.5px;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-top: 30px;
+        }
+
+        .feature-item {
+            text-align: center;
+        }
+
+        .feature-icon {
+            display: inline-block;
+            width: 60px;
+            height: 60px;
+            background: #1a1a1a;
+            border-radius: 12px;
+            margin-bottom: 15px;
+            position: relative;
+        }
+
+        .feature-icon::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 24px;
+            height: 24px;
+            border: 2px solid #ffffff;
+            border-radius: 50%;
+        }
+
+        .feature-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #ffffff;
+        }
+
+        .feature-text {
+            font-size: 0.95rem;
+            color: #666666;
+            line-height: 1.5;
+        }
+
+        .footer {
+            text-align: center;
+            padding-top: 40px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #666666;
+        }
+
+        .footer p {
+            margin-bottom: 10px;
+            font-size: 0.95rem;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         @keyframes slideUp {
@@ -37,202 +255,20 @@
             }
         }
 
-        .header {
-            text-align: center;
-            margin-bottom: 50px;
-            color: white;
-        }
-
-        .header h1 {
-            font-size: 3.5rem;
-            font-weight: 700;
-            margin-bottom: 15px;
-            text-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        }
-
-        .header .subtitle {
-            font-size: 1.3rem;
-            opacity: 0.9;
-            font-weight: 300;
-            max-width: 600px;
-            margin: 0 auto;
-            line-height: 1.6;
-        }
-
-        .tools-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 30px;
-            margin-bottom: 40px;
-        }
-
-        .tool-card {
-            background: white;
-            border-radius: 20px;
-            padding: 40px 30px;
-            text-align: center;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .tool-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 6px;
-            background: linear-gradient(90deg, #4facfe 0%, #00f2fe 100%);
-        }
-
-        .tool-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
-        }
-
-        .tool-icon {
-            font-size: 4rem;
-            margin-bottom: 20px;
-            display: block;
-        }
-
-        .tool-title {
-            font-size: 1.8rem;
-            font-weight: 700;
-            margin-bottom: 15px;
-            color: #2d3748;
-        }
-
-        .tool-description {
-            font-size: 1.1rem;
-            color: #4a5568;
-            line-height: 1.6;
-            margin-bottom: 25px;
-        }
-
-        .tool-features {
-            list-style: none;
-            margin-bottom: 30px;
-            text-align: left;
-        }
-
-        .tool-features li {
-            padding: 8px 0;
-            padding-left: 25px;
-            position: relative;
-            color: #718096;
-            font-size: 0.95rem;
-        }
-
-        .tool-features li:before {
-            content: "✓";
-            color: #48bb78;
-            font-weight: bold;
-            position: absolute;
-            left: 0;
-            font-size: 1.1rem;
-        }
-
-        .tool-button {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            text-decoration: none;
-            padding: 15px 30px;
-            border-radius: 12px;
-            font-weight: 600;
-            font-size: 1.1rem;
-            display: inline-block;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
-        }
-
-        .tool-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
-            text-decoration: none;
-            color: white;
-        }
-
-        .tool-button:active {
-            transform: translateY(0);
-        }
-
-        .stats-section {
-            background: rgba(255, 255, 255, 0.15);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            border-radius: 20px;
-            padding: 30px;
-            margin-bottom: 40px;
-            color: white;
-            text-align: center;
-        }
-
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 30px;
-            margin-top: 20px;
-        }
-
-        .stat-item {
-            text-align: center;
-        }
-
-        .stat-number {
-            font-size: 2.5rem;
-            font-weight: 700;
-            display: block;
-            margin-bottom: 5px;
-        }
-
-        .stat-label {
-            font-size: 1rem;
-            opacity: 0.9;
-        }
-
-        .footer {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            border-radius: 15px;
-            padding: 25px;
-            text-align: center;
-            color: white;
-        }
-
-        .footer p {
-            margin-bottom: 15px;
-            opacity: 0.9;
-        }
-
-        .github-link {
-            color: white;
-            text-decoration: none;
-            font-weight: 500;
-            padding: 8px 16px;
-            border-radius: 8px;
-            background: rgba(255, 255, 255, 0.1);
-            transition: all 0.3s ease;
-            display: inline-block;
-        }
-
-        .github-link:hover {
-            background: rgba(255, 255, 255, 0.2);
-            text-decoration: none;
-            color: white;
-            transform: translateY(-1px);
-        }
+        .tool-card:nth-child(1) { animation-delay: 0.1s; }
+        .tool-card:nth-child(2) { animation-delay: 0.15s; }
+        .tool-card:nth-child(3) { animation-delay: 0.2s; }
+        .tool-card:nth-child(4) { animation-delay: 0.25s; }
+        .tool-card:nth-child(5) { animation-delay: 0.3s; }
+        .tool-card:nth-child(6) { animation-delay: 0.35s; }
 
         @media (max-width: 768px) {
-            .header h1 {
-                font-size: 2.5rem;
+            .company-name {
+                font-size: 1.8rem;
             }
 
-            .header .subtitle {
-                font-size: 1.1rem;
+            .tagline {
+                font-size: 1.8rem;
             }
 
             .tools-grid {
@@ -241,186 +277,182 @@
             }
 
             .tool-card {
+                padding: 25px 20px;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .features-section {
                 padding: 30px 20px;
-            }
-
-            .tool-title {
-                font-size: 1.5rem;
-            }
-
-            .stats-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 20px;
-            }
-
-            .stat-number {
-                font-size: 2rem;
             }
         }
 
         @media (max-width: 480px) {
             .container {
-                padding: 0 10px;
+                padding: 30px 15px;
             }
 
-            .header h1 {
-                font-size: 2rem;
+            .company-name {
+                font-size: 1.5rem;
             }
 
-            .stats-grid {
-                grid-template-columns: 1fr;
+            .tagline {
+                font-size: 1.5rem;
+            }
+
+            .tool-title {
+                font-size: 1.3rem;
+            }
+
+            .features-title {
+                font-size: 1.5rem;
             }
         }
 
-        /* Animations */
-        .tool-card {
-            animation: fadeInUp 0.6s ease-out;
-            animation-fill-mode: both;
+        /* Loading animation */
+        .loading-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #ffffff, transparent);
+            transform: translateX(-100%);
+            animation: loading 2s linear infinite;
         }
 
-        .tool-card:nth-child(1) { animation-delay: 0.1s; }
-        .tool-card:nth-child(2) { animation-delay: 0.2s; }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
+        @keyframes loading {
             to {
-                opacity: 1;
-                transform: translateY(0);
+                transform: translateX(100%);
             }
         }
     </style>
 </head>
 <body>
+    <div class="loading-bar"></div>
+    
     <div class="container">
         <header class="header">
-            <h1>🚀 Amazon Tools Hub</h1>
-            <p class="subtitle">Your complete toolkit for Amazon fulfillment processing. Access all tools from one convenient location.</p>
+            <h1 class="company-name">Simple Modern Logistics</h1>
+            <h2 class="tagline">Amazon Tools Hub</h2>
         </header>
 
-        <div class="stats-section">
-            <h2 style="margin-bottom: 10px; font-size: 1.5rem;">Streamline Your Amazon Operations</h2>
-            <p style="opacity: 0.9; font-size: 1.1rem;">Professional tools designed to save time and reduce errors in your fulfillment workflow</p>
-            <div class="stats-grid">
-                <div class="stat-item">
-                    <span class="stat-number">2</span>
-                    <span class="stat-label">Powerful Tools</span>
-                </div>
-                <div class="stat-item">
-                    <span class="stat-number">100%</span>
-                    <span class="stat-label">Browser-Based</span>
-                </div>
-                <div class="stat-item">
-                    <span class="stat-number">⚡</span>
-                    <span class="stat-label">Instant Processing</span>
-                </div>
-            </div>
+        <div class="tools-grid">
+            <a href="https://lucasmundtsm.github.io/PO-Upload-Dims-and-Weight/" class="tool-card" target="_blank">
+                <span class="tool-number">01</span>
+                <h2 class="tool-title">PO Upload Dims & Weight</h2>
+                <p class="tool-description">Upload and manage purchase order dimensions and weight data for streamlined inventory processing.</p>
+                <span class="tool-button">Launch Tool →</span>
+            </a>
+
+            <a href="https://lucasmundtsm.github.io/AMZ-FC-Splitter/" class="tool-card" target="_blank">
+                <span class="tool-number">02</span>
+                <h2 class="tool-title">AMZ FC Splitter</h2>
+                <p class="tool-description">Split large Excel files by Fulfillment Center with automated organization and batch processing.</p>
+                <span class="tool-button">Launch Tool →</span>
+            </a>
+
+            <a href="https://lucasmundtsm.github.io/AMZ-Carton-Label-Template/" class="tool-card" target="_blank">
+                <span class="tool-number">03</span>
+                <h2 class="tool-title">AMZ Carton Label Template</h2>
+                <p class="tool-description">Generate professional carton labels with automated ASN CSV file creation and template integration.</p>
+                <span class="tool-button">Launch Tool →</span>
+            </a>
+
+            <a href="https://lucasmundtsm.github.io/Amazon-Pallet-Labels/" class="tool-card" target="_blank">
+                <span class="tool-number">04</span>
+                <h2 class="tool-title">Amazon Pallet Labels</h2>
+                <p class="tool-description">Create and manage pallet labels for efficient warehouse operations and shipment tracking.</p>
+                <span class="tool-button">Launch Tool →</span>
+            </a>
+
+            <a href="https://lucasmundtsm.github.io/SM-BOL-Creation/" class="tool-card" target="_blank">
+                <span class="tool-number">05</span>
+                <h2 class="tool-title">SM BOL Creation</h2>
+                <p class="tool-description">Generate Bill of Lading documents with automated form filling and professional formatting.</p>
+                <span class="tool-button">Launch Tool →</span>
+            </a>
+
+            <a href="https://lucasmundtsm.github.io/Commercial-Invoice-Template/" class="tool-card" target="_blank">
+                <span class="tool-number">06</span>
+                <h2 class="tool-title">Commercial Invoice Template</h2>
+                <p class="tool-description">Create professional commercial invoices with automated calculations and compliance formatting.</p>
+                <span class="tool-button">Launch Tool →</span>
+            </a>
         </div>
 
-        <div class="tools-grid">
-            <div class="tool-card">
-                <span class="tool-icon">📊</span>
-                <h2 class="tool-title">Excel File Splitter</h2>
-                <p class="tool-description">Split large Excel files by Fulfillment Center with one-click ZIP download containing all 19 organized files.</p>
-                <ul class="tool-features">
-                    <li>Automatic FC-based file splitting</li>
-                    <li>Single ZIP download with all files</li>
-                    <li>Drag & drop file upload</li>
-                    <li>Instant processing and download</li>
-                </ul>
-                <a href="https://lucasmundtsm.github.io/AMZ-FC-Splitter/" class="tool-button" target="_blank">
-                    Launch Splitter Tool →
-                </a>
-            </div>
-
-            <div class="tool-card">
-                <span class="tool-icon">📦</span>
-                <h2 class="tool-title">Carton Label Processor</h2>
-                <p class="tool-description">Generate ASN CSV files from your carton data, pallet labels, and templates with automated processing.</p>
-                <ul class="tool-features">
-                    <li>Multi-file processing capability</li>
-                    <li>ASN template integration</li>
-                    <li>Carton & pallet label support</li>
-                    <li>Automated CSV generation</li>
-                </ul>
-                <a href="https://lucasmundtsm.github.io/AMZ-Carton-Label-Template/" class="tool-button" target="_blank">
-                    Launch Label Processor →
-                </a>
+        <div class="features-section">
+            <h2 class="features-title">Enterprise-Grade Tools</h2>
+            <div class="features-grid">
+                <div class="feature-item">
+                    <div class="feature-icon"></div>
+                    <h3 class="feature-title">Browser-Based</h3>
+                    <p class="feature-text">No installation required. Access tools instantly from any device.</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon"></div>
+                    <h3 class="feature-title">Secure Processing</h3>
+                    <p class="feature-text">All data processing happens locally in your browser.</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon"></div>
+                    <h3 class="feature-title">Professional Grade</h3>
+                    <p class="feature-text">Built for enterprise fulfillment operations.</p>
+                </div>
             </div>
         </div>
 
         <footer class="footer">
-            <p>🛠️ Built for Amazon sellers and fulfillment professionals</p>
-            <p>All tools run entirely in your browser - your data never leaves your device</p>
-            <a href="https://github.com/lucasmundtsm" class="github-link" target="_blank">
-                🐙 View on GitHub
-            </a>
+            <p>Professional Amazon Fulfillment Tools Suite</p>
+            <p>© 2025 Simple Modern. All tools run entirely in your browser.</p>
         </footer>
     </div>
 
     <script>
-        // Add some interactive polish
+        // Remove loading bar after page loads
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                document.querySelector('.loading-bar').style.display = 'none';
+            }, 1000);
+        });
+
+        // Add smooth hover effects
         document.addEventListener('DOMContentLoaded', function() {
-            // Animate stats numbers
-            const statNumbers = document.querySelectorAll('.stat-number');
-            
+            // Add click analytics (optional)
+            const toolCards = document.querySelectorAll('.tool-card');
+            toolCards.forEach(card => {
+                card.addEventListener('click', function(e) {
+                    const toolTitle = this.querySelector('.tool-title').textContent;
+                    console.log(`Tool accessed: ${toolTitle}`);
+                });
+            });
+
+            // Intersection Observer for fade-in animations
             const observerOptions = {
-                threshold: 0.7,
-                rootMargin: '0px 0px -100px 0px'
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
             };
 
             const observer = new IntersectionObserver(function(entries) {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
-                        entry.target.style.animation = 'pulse 0.6s ease-out';
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
                     }
                 });
             }, observerOptions);
 
-            statNumbers.forEach(stat => {
-                observer.observe(stat);
-            });
-
-            // Add hover sound effect simulation (visual feedback)
-            const toolCards = document.querySelectorAll('.tool-card');
-            toolCards.forEach(card => {
-                card.addEventListener('mouseenter', function() {
-                    this.style.background = 'linear-gradient(135deg, #ffffff 0%, #f8fafc 100%)';
-                });
-                
-                card.addEventListener('mouseleave', function() {
-                    this.style.background = 'white';
-                });
-            });
-
-            // Add click tracking for analytics (you can implement actual tracking)
-            const toolButtons = document.querySelectorAll('.tool-button');
-            toolButtons.forEach(button => {
-                button.addEventListener('click', function(e) {
-                    const toolName = this.closest('.tool-card').querySelector('.tool-title').textContent;
-                    console.log(`Tool accessed: ${toolName}`);
-                    
-                    // Add a subtle click effect
-                    this.style.transform = 'scale(0.98)';
-                    setTimeout(() => {
-                        this.style.transform = '';
-                    }, 150);
-                });
+            const featureItems = document.querySelectorAll('.feature-item');
+            featureItems.forEach(item => {
+                item.style.opacity = '0';
+                item.style.transform = 'translateY(20px)';
+                item.style.transition = 'all 0.6s ease-out';
+                observer.observe(item);
             });
         });
-
-        // Add CSS animation for pulse effect
-        const style = document.createElement('style');
-        style.textContent = `
-            @keyframes pulse {
-                0% { transform: scale(1); }
-                50% { transform: scale(1.1); }
-                100% { transform: scale(1); }
-            }
-        `;
-        document.head.appendChild(style);
     </script>
 </body>
 </html>
