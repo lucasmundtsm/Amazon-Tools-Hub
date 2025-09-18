@@ -10,70 +10,63 @@
             padding: 0;
             box-sizing: border-box;
         }
-
+        
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             min-height: 100vh;
-            color: #333;
+            padding: 2rem;
         }
-
+        
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 40px 20px;
         }
-
-        .header {
+        
+        header {
             text-align: center;
-            margin-bottom: 50px;
+            margin-bottom: 3rem;
+        }
+        
+        h1 {
             color: white;
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
         }
-
-        .company-name {
-            font-size: 2.6rem;
-            font-weight: 600;
-            letter-spacing: 2px;
-            margin-bottom: 10px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        
+        .subtitle {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.1rem;
+            font-weight: 400;
         }
-
-        .tagline {
-            font-size: 2rem;
-            font-weight: 600;
-            letter-spacing: 1px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-        }
-
+        
         .tools-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 30px;
-            margin: 40px 0;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
         }
-
+        
         .tool-card {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            border-radius: 15px;
-            padding: 30px 25px;
+            background: white;
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
             text-decoration: none;
-            color: #333;
-            transition: all 0.3s ease;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            color: inherit;
+            display: block;
             position: relative;
             overflow: hidden;
-            animation: slideUp 0.6s ease-out;
-            animation-fill-mode: both;
         }
-
+        
         .tool-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-            background: rgba(255, 255, 255, 0.98);
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
         }
-
+        
         .tool-card::before {
             content: '';
             position: absolute;
@@ -83,230 +76,175 @@
             height: 4px;
             background: linear-gradient(90deg, #667eea, #764ba2);
         }
-
+        
         .tool-number {
             display: inline-block;
             background: linear-gradient(135deg, #667eea, #764ba2);
             color: white;
-            font-weight: 600;
-            padding: 8px 16px;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            margin-bottom: 15px;
-            letter-spacing: 1px;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            font-size: 1rem;
         }
-
+        
         .tool-title {
-            font-size: 1.4rem;
+            font-size: 1.25rem;
             font-weight: 600;
-            margin-bottom: 12px;
-            color: #2c3e50;
+            color: #333;
+            margin-bottom: 0.75rem;
+            line-height: 1.4;
         }
-
+        
         .tool-description {
             color: #666;
             line-height: 1.6;
             font-size: 0.95rem;
         }
-
-        .features-section {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            border-radius: 15px;
-            padding: 40px 30px;
-            margin-top: 50px;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-        }
-
-        .features-title {
-            font-size: 1.8rem;
-            font-weight: 600;
-            text-align: center;
-            margin-bottom: 30px;
-            color: #2c3e50;
-        }
-
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 40px;
-        }
-
-        .feature-item {
-            text-align: center;
-        }
-
-        .feature-icon {
-            font-size: 3rem;
-            margin-bottom: 15px;
-            display: block;
-        }
-
-        .feature-title {
-            font-size: 1.2rem;
-            font-weight: 600;
-            margin-bottom: 10px;
-            color: #2c3e50;
-        }
-
-        .feature-description {
-            color: #666;
-            line-height: 1.6;
+        
+        .tool-link {
+            display: inline-flex;
+            align-items: center;
+            margin-top: 1rem;
+            color: #667eea;
+            font-weight: 500;
             font-size: 0.9rem;
+            text-decoration: none;
+            transition: color 0.3s ease;
         }
-
-        @keyframes slideUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        
+        .tool-link:hover {
+            color: #764ba2;
         }
-
-        .tool-card:nth-child(1) { animation-delay: 0s; }
-        .tool-card:nth-child(2) { animation-delay: 0.1s; }
-        .tool-card:nth-child(3) { animation-delay: 0.2s; }
-        .tool-card:nth-child(4) { animation-delay: 0.3s; }
-        .tool-card:nth-child(5) { animation-delay: 0.4s; }
-        .tool-card:nth-child(6) { animation-delay: 0.5s; }
-
+        
+        .tool-link::after {
+            content: '→';
+            margin-left: 0.5rem;
+            transition: transform 0.3s ease;
+        }
+        
+        .tool-card:hover .tool-link::after {
+            transform: translateX(3px);
+        }
+        
         @media (max-width: 768px) {
-            .company-name {
-                font-size: 1.8rem;
+            h1 {
+                font-size: 2rem;
             }
-
-            .tagline {
-                font-size: 1.6rem;
-            }
-
+            
             .tools-grid {
                 grid-template-columns: 1fr;
-                gap: 20px;
+                gap: 1.5rem;
             }
-
-            .tool-card {
-                padding: 25px 20px;
-            }
-
-            .features-grid {
-                grid-template-columns: 1fr;
-                gap: 30px;
-            }
-
-            .features-section {
-                padding: 30px 20px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .container {
-                padding: 30px 15px;
-            }
-
-            .company-name {
-                font-size: 1.5rem;
-            }
-
-            .tagline {
-                font-size: 1.4rem;
-            }
-
-            .tool-title {
-                font-size: 1.2rem;
-            }
-
-            .features-title {
-                font-size: 1.5rem;
-            }
-        }
-
-        /* Loading animation */
-        .loading-bar {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 2px;
-            background: linear-gradient(90deg, transparent, #ffffff, transparent);
-            transform: translateX(-100%);
-            animation: loading 2s linear infinite;
-        }
-
-        @keyframes loading {
-            to {
-                transform: translateX(100%);
+            
+            body {
+                padding: 1rem;
             }
         }
     </style>
 </head>
 <body>
-    <div class="loading-bar"></div>
-    
     <div class="container">
-        <header class="header">
-            <h1 class="company-name">Simple Modern Logistics</h1>
-            <h2 class="tagline">Amazon Tools Hub</h2>
+        <header>
+            <h1>Amazon Tools Hub</h1>
+            <p class="subtitle">Simple Modern Logistics - Streamline Your Amazon Operations</p>
         </header>
-
+        
         <div class="tools-grid">
-            <a href="https://lucasmundtsm.github.io/PO-Confirmation-Tool/" class="tool-card" target="_blank">
-                <span class="tool-number">01</span>
-                <h2 class="tool-title">PO Confirmation Tool</h2>
-                <p class="tool-description">Streamline purchase order confirmations with automated processing and validation features for enhanced workflow efficiency.</p>
+            <!-- Tool 1: PO Upload Processor -->
+            <a href="https://lucasmundtsm.github.io/PO-Upload-Processor/" class="tool-card" target="_blank">
+                <span class="tool-number">1</span>
+                <h2 class="tool-title">PO Upload Processor</h2>
+                <p class="tool-description">
+                    Streamline purchase order confirmations with automated processing and validation features for enhanced workflow efficiency.
+                </p>
+                <span class="tool-link">Open Tool</span>
             </a>
-
-            <a href="https://lucasmundtsm.github.io/PO-Worksheet-Processor/" class="tool-card" target="_blank">
-                <span class="tool-number">02</span>
-                <h2 class="tool-title">PO Worksheet Processor</h2>
-                <p class="tool-description">Upload and manage purchase order dimensions and weight data for streamlined logistics processing and accurate shipping calculations.</p>
+            
+            <!-- Tool 2: Purchase Order Dimensions & Weight Tool -->
+            <a href="https://lucasmundtsm.github.io/Purchase-Order-Dimensions-Weight-Tool/" class="tool-card" target="_blank">
+                <span class="tool-number">2</span>
+                <h2 class="tool-title">Purchase Order Dimensions & Weight Tool</h2>
+                <p class="tool-description">
+                    Upload and manage purchase order dimensions and weight data for streamlined logistics processing and accurate shipping calculations.
+                </p>
+                <span class="tool-link">Open Tool</span>
             </a>
-
-            <a href="https://lucasmundtsm.github.io/AMZ-FC-Splitter/" class="tool-card" target="_blank">
-                <span class="tool-number">03</span>
-                <h2 class="tool-title">AMZ FC Splitter</h2>
-                <p class="tool-description">Split Amazon fulfillment center data efficiently, organizing shipments by facility for optimized processing and distribution management.</p>
+            
+            <!-- Tool 3: Amazon Fulfillment Centers Splitter -->
+            <a href="https://lucasmundtsm.github.io/Amazon-Fulfillment-Centers-Splitter/" class="tool-card" target="_blank">
+                <span class="tool-number">3</span>
+                <h2 class="tool-title">Amazon Fulfillment Centers Splitter</h2>
+                <p class="tool-description">
+                    Split Amazon fulfillment center data efficiently, organizing shipments by facility for optimized processing and distribution management.
+                </p>
+                <span class="tool-link">Open Tool</span>
             </a>
-
-            <a href="https://lucasmundtsm.github.io/PO-Worksheet-and-ARN-Generator/" class="tool-card" target="_blank">
-                <span class="tool-number">04</span>
-                <h2 class="tool-title">PO Worksheet & ARN Generator</h2>
-                <p class="tool-description">Generate comprehensive purchase order worksheets and ARN numbers for seamless Amazon integration and tracking capabilities.</p>
+            
+            <!-- Tool 4: Amazon Worksheet & ARN Generator -->
+            <a href="https://lucasmundtsm.github.io/Amazon-Worksheet-ARN-Generator/" class="tool-card" target="_blank">
+                <span class="tool-number">4</span>
+                <h2 class="tool-title">Amazon Worksheet & ARN Generator</h2>
+                <p class="tool-description">
+                    Generate comprehensive purchase order worksheets and ARN numbers for seamless Amazon integration and tracking capabilities.
+                </p>
+                <span class="tool-link">Open Tool</span>
             </a>
-
-            <a href="https://lucasmundtsm.github.io/AMZ-Carton-Label-SKU-Generator/" class="tool-card" target="_blank">
-                <span class="tool-number">05</span>
-                <h2 class="tool-title">AMZ Carton Label SKU Generator</h2>
-                <p class="tool-description">Create accurate Amazon carton labels with SKU information for proper identification and efficient warehouse processing workflows.</p>
+            
+            <!-- Tool 5: UNIS FTP Generator (NEW) -->
+            <a href="https://lucasmundtsm.github.io/UNIS-FTP-Generator/" class="tool-card" target="_blank">
+                <span class="tool-number">5</span>
+                <h2 class="tool-title">UNIS FTP Generator</h2>
+                <p class="tool-description">
+                    Convert processed PO upload files into FTP pick list format for UNIS facility operations with automated formatting and validation.
+                </p>
+                <span class="tool-link">Open Tool</span>
             </a>
-
+            
+            <!-- Tool 6: Carton Label SKU (moved from 5) -->
+            <a href="https://lucasmundtsm.github.io/Carton-Label-SKU/" class="tool-card" target="_blank">
+                <span class="tool-number">6</span>
+                <h2 class="tool-title">Carton Label SKU</h2>
+                <p class="tool-description">
+                    Create accurate Amazon carton labels with SKU information for proper identification and efficient warehouse processing workflows.
+                </p>
+                <span class="tool-link">Open Tool</span>
+            </a>
+            
+            <!-- Tool 7: Amazon Pallet Labels (moved from 6) -->
             <a href="https://lucasmundtsm.github.io/Amazon-Pallet-Labels/" class="tool-card" target="_blank">
-                <span class="tool-number">06</span>
+                <span class="tool-number">7</span>
                 <h2 class="tool-title">Amazon Pallet Labels</h2>
-                <p class="tool-description">Generate compliant Amazon pallet labels with proper formatting and tracking information for smooth fulfillment center operations.</p>
+                <p class="tool-description">
+                    Generate compliant Amazon pallet labels with proper formatting and tracking information for smooth fulfillment center operations.
+                </p>
+                <span class="tool-link">Open Tool</span>
+            </a>
+            
+            <!-- Tool 8: Small Parcel ASN Divider (NEW) -->
+            <a href="https://lucasmundtsm.github.io/Small-Parcel-ASN-Divider/" class="tool-card" target="_blank">
+                <span class="tool-number">8</span>
+                <h2 class="tool-title">Small Parcel ASN Divider</h2>
+                <p class="tool-description">
+                    Divide and filter small parcel shipments, automatically excluding shipments with existing ASN numbers for streamlined processing.
+                </p>
+                <span class="tool-link">Open Tool</span>
+            </a>
+            
+            <!-- Tool 9: NetSuite PO Fulfillment Generator (NEW) -->
+            <a href="https://lucasmundtsm.github.io/Netsuite-PO-Fulfillment-Generator/" class="tool-card" target="_blank">
+                <span class="tool-number">9</span>
+                <h2 class="tool-title">NetSuite PO Fulfillment Generator</h2>
+                <p class="tool-description">
+                    Create facility-specific fulfillment templates for Encore and UNIS operations, managing pending Amazon orders with automated prioritization.
+                </p>
+                <span class="tool-link">Open Tool</span>
             </a>
         </div>
-         </div>
     </div>
-
-    <script>
-        // Add smooth loading animation
-        window.addEventListener('load', function() {
-            const loadingBar = document.querySelector('.loading-bar');
-            setTimeout(() => {
-                loadingBar.style.display = 'none';
-            }, 2000);
-        });
-
-        // Add hover effects and analytics if needed
-        document.querySelectorAll('.tool-card').forEach(card => {
-            card.addEventListener('click', function() {
-                // Optional: Add analytics tracking here
-                console.log('Tool clicked:', this.querySelector('.tool-title').textContent);
-            });
-        });
-    </script>
 </body>
 </html>
